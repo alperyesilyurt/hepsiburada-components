@@ -1,24 +1,10 @@
 <template>
-<div class="calendar">
- 
-    calendar
-
-</div>
-  
-  
+  <div class="calendar">calendar</div>
 </template>
 
 <script>
-
-
-
-export default{
-
-
-
-}
+export default {};
 </script>
-
 
 <style scoped>
 .calendar{

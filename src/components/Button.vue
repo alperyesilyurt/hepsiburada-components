@@ -1,57 +1,44 @@
 <template>
-   <div class="button-wrapper">
-        <button 
-        :class="buttonType"
-        :disabled="disabled"
-        @click="handleButton($event)"
-        
-        >
-        {{buttonText}}
-        </button>
-       
-   </div>
+  <div class="button-wrapper">
+    <button
+      :class="buttonType"
+      :disabled="disabled"
+      @click="handleButton($event)"
+    >
+      {{ buttonText }}
+    </button>
+  </div>
 </template>
 
-
 <script>
-
-
 export default {
-
-
-    props : {
-
-        buttonText: {
-            type: String,
-            default: ()=> 'Primary Button'
-        },
-
-        buttonType: {
-            type: String,
-            default: ()=> "primary"
-        },
-            
-        disabled: {
-            type: Boolean,
-            default: false
-            
-        },
-        icon: {
-            type: String,
-            default: ''
-        },
-
-
+  props: {
+    buttonText: {
+      type: String,
+      default: () => "Primary Button",
     },
-    methods :{
-        handleButton(e){
-            this.$emit('click', e);
-        }
-    }
-    
-}
-</script>
 
+    buttonType: {
+      type: String,
+      default: () => "primary",
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+      default: "",
+    },
+  },
+  methods: {
+    handleButton(e) {
+      this.$emit("click", e);
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 
@@ -92,6 +79,4 @@ background-color: #5365BF;
 
 }
 }
-
-
 </style>
