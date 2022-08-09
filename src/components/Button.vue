@@ -72,13 +72,24 @@ opacity: 0.38;
 background-color: #FF6000;
 color: #FFFFFF;
 }
+&.primary:hover{
+background-color: #BF4800;
+}
 &.variant{
 background-color: #FFEFE5;
 color: #FF6000;
 }
+&.variant:hover{
+background-color: #FFBF99;
+color: #BF4800;
+}
 &.secondary{
 background-color: #6B83FA;
 color: #FFFFFF;
+}
+&.secondary:hover{
+background-color: #5365BF;
+
 }
 }
 
