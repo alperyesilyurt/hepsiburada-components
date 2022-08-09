@@ -1,24 +1,10 @@
 <template>
-<div class="pagination">
- 
-    pagination
-
-</div>
-  
-  
+  <div class="pagination">pagination</div>
 </template>
 
 <script>
-
-
-
-export default{
-
-
-
-}
+export default {};
 </script>
-
 
 <style scoped>
 .pagination{
