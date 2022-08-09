@@ -4,10 +4,10 @@
              <router-link class="pages" tag="div" to="/buttonpage">
                 <a class="nav-link" href="#">Button Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="">
+            <router-link class="pages" tag="div" to="calendarpage">
                 <a class="nav-link" href="#">Calendar Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="">
+            <router-link class="pages" tag="div" to="paginationpage">
                 <a class="nav-link" href="#">Pagination Page</a>
             </router-link>
             <router-link class="pages" tag="div" to="">

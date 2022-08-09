@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+    display: flex;
+}
 </style>
