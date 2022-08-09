@@ -1,19 +1,19 @@
 <template>
     
         <div class="navigation">
-             <router-link class="pages" tag="div" to="/buttonpage">
+             <router-link class="pages" tag="a" to="/buttonpage">
                 <a class="nav-link" href="#">Button Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="calendarpage">
+            <router-link class="pages" tag="a" to="calendarpage">
                 <a class="nav-link" href="#">Calendar Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="paginationpage">
+            <router-link class="pages" tag="a" to="paginationpage">
                 <a class="nav-link" href="#">Pagination Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="">
+            <router-link class="pages" tag="a" to="">
                 <a class="nav-link" href="#">Input-Switch Page</a>
             </router-link>
-            <router-link class="pages" tag="div" to="">
+            <router-link class="pages" tag="a" to="">
                 <a class="nav-link" href="#">Input-Checkbox Page</a>
             </router-link>
             
@@ -50,7 +50,9 @@ export default {
     border-radius: 8px;
     justify-content: center;
     align-items: center;
-    padding: 0px;   
+    padding: 0px;  
+    text-decoration: none;
+ 
 }
 .pages:hover{
    background-color: #BF4800;
