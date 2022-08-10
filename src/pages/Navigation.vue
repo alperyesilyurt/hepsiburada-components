@@ -10,10 +10,10 @@
       <a class="nav-link" href="#">Pagination Page</a>
     </router-link>
     <router-link class="pages" tag="a" to="">
-      <a class="nav-link" href="#">Input-Switch Page</a>
+      <a class="nav-link" href="#">Switch Page</a>
     </router-link>
     <router-link class="pages" tag="a" to="">
-      <a class="nav-link" href="#">Input-Checkbox Page</a>
+      <a class="nav-link" href="#">Checkbox Page</a>
     </router-link>
   </div>
 </template>
@@ -26,34 +26,37 @@ export default {};
 .navigation{
     display: flex;
     flex-direction: column;
-    width: 180px;
-    height: 690px;
     background-color: #FF6000;
     border-radius: 8px;
+    padding: 12px 16px;
+    gap:16px;
 }
 
 
 .pages {
     display: flex;
-    margin: 10px;
-    height: 40px;
+    padding: 12px 16px ;
     background-color: #FFFFFF;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     font-family: sans-serif;
     border-radius: 8px;
     justify-content: center;
     align-items: center;
-    padding: 0px;
     text-decoration: none;
 
 }
 .pages:hover{
    background-color: #BF4800;
-
+   
 }
 
 .nav-link{
     text-decoration: none;
     color: black;
 }
+.nav-link:hover{
+    text-decoration: none;
+    color: white;
+}
+
 </style>

@@ -82,7 +82,7 @@ methods : {
 
 <style scoped>
 .buttons{
-  gap: 10px;
+  gap: 20px;
   margin-top: 40px;
   margin-left: 100px;
 }
