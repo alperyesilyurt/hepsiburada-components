@@ -5,8 +5,12 @@
         :disabled="disabled"
         @click="handleButton($event)"
         
+        
         >
         {{buttonText}}
+        
+        <img src="../assets/settings.svg" />
+
         </button>
        
    </div>
@@ -17,7 +21,6 @@
 
 
 export default {
-
 
     props : {
 
@@ -38,7 +41,7 @@ export default {
         },
         icon: {
             type: String,
-            default: ''
+            default: ()=> "../assets/settings.svg"
         },
 
 
@@ -63,7 +66,7 @@ align-items: center;
 padding: 12px 16px ;
 border-radius: 8px;
 border: none;
-
+gap: 10px;
 &[disabled]{
 cursor: not-allowed;
 opacity: 0.38;
@@ -92,6 +95,8 @@ background-color: #5365BF;
 
 }
 }
+
+
 
 
 </style>

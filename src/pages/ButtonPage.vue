@@ -5,19 +5,19 @@
  @click="func1" 
  :disabled=false 
  buttonType="primary" 
- buttonText="Click Me !" 
+ buttonText="Click Me !"
  />
 
  <compButton 
  @click="func2" 
- :disabled=true 
+ :disabled=false 
  buttonType="variant"
  buttonText="Click Me 2 !"  
  />
 
  <compButton 
  @click="func3" 
- :disabled=false 
+ :disabled=true 
  buttonType="secondary"
  buttonText="Click Me 3!"  
  />
@@ -74,7 +74,7 @@ methods : {
     flex-direction: row;
     margin: 10px;
     gap: 50px;
-    background-color: whitesmoke;
+    
 
   width: 800px;
   height: 620px;
