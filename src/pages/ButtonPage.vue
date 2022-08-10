@@ -11,14 +11,14 @@
 
  <compButton 
  @click="func2" 
- :disabled=false 
+ :disabled=true 
  buttonType="variant"
  buttonText="Variant"  
  />
 
  <compButton 
  @click="func3" 
- :disabled=true 
+ :disabled=false 
  buttonType="secondary"
  buttonText="Secondary"
  icon="settings.svg"  
