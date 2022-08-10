@@ -31,8 +31,8 @@ We have 5 different styles of buttons. These are primary, variant, secondary, bo
 3) :disabled
 By default it is disabled. You can turn it on by saying :disabled=true or turn it off by saying :disabled=false. When :disabled=true, cursor is not working and opacity is low.
 
-4) icon
-
+4) icon="name.svg"
+To add an icon inside the button, create the .svg file of the icon you want to add under the assets folder. Then you can import your icon by saying icon="name.svg". There are settings.svg / info.svg / alert.svg icons in this project.
 
 
 5) @click="functionName"

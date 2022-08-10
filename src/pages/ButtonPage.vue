@@ -6,6 +6,7 @@
  :disabled=false 
  buttonType="primary" 
  buttonText="Primary"
+
  />
 
  <compButton 
@@ -19,7 +20,8 @@
  @click="func3" 
  :disabled=true 
  buttonType="secondary"
- buttonText="Secondary"  
+ buttonText="Secondary"
+ icon="settings.svg"  
  />
 
  <compButton 
@@ -27,6 +29,7 @@
  :disabled=false
  buttonType="bordered" 
  buttonText="Bordered"
+ icon="alert.svg"
  />
  
  <compButton 
@@ -34,6 +37,7 @@
  :disabled=false
  buttonType="ghost" 
  buttonText="Ghost"
+ icon="info.svg"
  />
 
 
