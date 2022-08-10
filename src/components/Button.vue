@@ -8,8 +8,8 @@
         
         >
         {{buttonText}}
-        <img :src="resolveSvg(icon)"/>
 
+        <img :src="require(`../assets/${icon}`)"/>
         </button>
        
    </div>
@@ -48,11 +48,8 @@ export default {
     methods :{
         handleButton(e){
             this.$emit('click', e);
-        },
-        resolveSvg: function (path) {
-            let images = require.context('../assets/', false, /\.svg$|\.jpg$/)
-            return images("./"+path)
         }
+   
 
     }
     
