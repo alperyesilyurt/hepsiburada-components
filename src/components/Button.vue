@@ -9,7 +9,6 @@
         >
         {{buttonText}}
         
-        <img src="../assets/settings.svg" />
 
         </button>
        
@@ -26,12 +25,12 @@ export default {
 
         buttonText: {
             type: String,
-            default: ()=> 'Primary Button'
+            default: 'Primary Button'
         },
 
         buttonType: {
             type: String,
-            default: ()=> "primary"
+            default: "primary"
         },
             
         disabled: {
@@ -41,7 +40,7 @@ export default {
         },
         icon: {
             type: String,
-            default: ()=> "../assets/settings.svg"
+            default: "../assets/settings.svg"
         },
 
 
@@ -94,6 +93,27 @@ color: #FFFFFF;
 background-color: #5365BF;
 
 }
+&.bordered{
+padding: 10px 14px ;
+background-color: transparent;
+border: 2px solid #DADADA;
+color: #212121;
+}
+&.bordered:hover{
+background-color: #F0F0F0;
+
+}
+&.ghost{
+background-color: transparent;
+color: #212121;
+}
+&.ghost:hover{
+background-color: #F0F0F0;
+
+}
+
+
+
 }
 
 

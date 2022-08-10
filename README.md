@@ -26,7 +26,7 @@ Buttons have 4 different qualifications;
 You can customize the name of the button as you wish. All you need to do for this is buttonText="your text"
 
 2) buttonType
-We have 3 different styles of buttons. These are primary, variant and secondary styles respectively. All you need to do for this is buttonType="primary/variant/secondary/"
+We have 5 different styles of buttons. These are primary, variant, secondary, bordered and ghost styles respectively. All you need to do for this is buttonType="primary/variant/secondary/bordered/ghost"
 
 3) :disabled
 By default it is disabled. You can turn it on by saying :disabled=true or turn it off by saying :disabled=false. When :disabled=true, cursor is not working and opacity is low.

@@ -5,29 +5,37 @@
  @click="func1" 
  :disabled=false 
  buttonType="primary" 
- buttonText="Click Me !"
+ buttonText="Primary"
  />
 
  <compButton 
  @click="func2" 
  :disabled=false 
  buttonType="variant"
- buttonText="Click Me 2 !"  
+ buttonText="Variant"  
  />
 
  <compButton 
  @click="func3" 
  :disabled=true 
  buttonType="secondary"
- buttonText="Click Me 3!"  
+ buttonText="Secondary"  
  />
 
  <compButton 
  @click="func1" 
- :disabled=false 
+ :disabled=false
+ buttonType="bordered" 
+ buttonText="Bordered"
  />
  
-    
+ <compButton 
+ @click="func1" 
+ :disabled=false
+ buttonType="ghost" 
+ buttonText="Ghost"
+ />
+
 
 </div>
   
@@ -70,15 +78,7 @@ methods : {
 
 <style scoped>
 .buttons{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    gap: 50px;
-    
-
-  width: 800px;
-  height: 620px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  gap: 10px;
   margin-top: 40px;
   margin-left: 100px;
 }
