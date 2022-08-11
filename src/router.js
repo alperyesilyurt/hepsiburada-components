@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import ButtonPage from "./pages/ButtonPage";
-import CalendarPage from "./pages/CalendarPage";
+import InputPage from "./pages/InputPage";
 import PaginationPage from "./pages/PaginationPage";
 
 
@@ -23,8 +23,8 @@ export const router = new VueRouter({
         },
 
         { 
-            path : "/calendarpage" , 
-            component : CalendarPage,
+            path : "/inputpage" , 
+            component : InputPage,
         },
 
         { 

@@ -1,7 +1,12 @@
 <template>
-<div class="calendar">
+<div class="input">
  
-    calendar
+<comp-input
+
+
+
+/>
+
 
 </div>
   
@@ -9,10 +14,14 @@
 </template>
 
 <script>
-
-
+import compInput from "../components/Input.vue"
 
 export default{
+
+components : {
+  compInput
+}
+
 
 
 
@@ -21,7 +30,7 @@ export default{
 
 
 <style scoped>
-.calendar{
+.input{
   gap: 20px;
   margin-top: 40px;
   margin-left: 100px;
