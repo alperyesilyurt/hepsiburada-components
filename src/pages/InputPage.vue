@@ -2,11 +2,14 @@
 <div class="input">
  
 <comp-input
+inputPlaceholder="Placeholder"
+:disabled=true
+inputType="primary" 
 
 
 
 />
-
+<p>{{name}}</p>
 
 </div>
   
