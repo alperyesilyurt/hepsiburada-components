@@ -2,14 +2,23 @@
   <div class="input">
     <input
       class="input-content"
-      :class="`input-${inputType}`"
+      :class="`input-${inputStyle}`"
       :placeholder="inputPlaceholder"
+      :type="type"
+      @input="onChange"
+      
     />
+    
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    onChange(event) {
+      this.$emit("onChange", event.target.value);
+    },
+  },
   props: {
     inputPlaceholder: {
       type: String,
@@ -19,10 +28,15 @@ export default {
       type: Boolean,
       default: false,
     },
-    inputType: {
+    inputStyle: {
       type: String,
-      default: "primary",
+      default: "default",
     },
+    type: {
+      type: String,
+      default: "text",
+    },
+    
   },
 };
 </script>
@@ -32,29 +46,29 @@ export default {
   &-content {
     padding: 12px;
     border-radius: 8px;
-    border: none;   
+    border: none;
   }
   ::placeholder {
     color: #9b9b9b;
   }
-  &-primary {
+  &-default {
     background: #e5e5e5;
   }
 
-  &-primary:hover {
+  &-default:hover {
     background: #f0f0f0;
   }
 
-  &-primary:focus {
+  &-default:focus {
     outline: 2px solid #ff6000;
     background: #ffffff;
   }
-
-
-
-
-
-
-  
+  &-error {
+    background: #ffe5e5;
+    border: 2px solid #fa0000;
+  }
+  &-error:focus {
+    outline: 0px;
+  }
 }
 </style>

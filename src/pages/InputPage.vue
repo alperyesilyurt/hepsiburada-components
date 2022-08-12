@@ -1,19 +1,27 @@
 <template>
-<div class="input">
- 
-<comp-input
-inputPlaceholder="Placeholder"
-:disabled=true
-inputType="primary" 
+  <div class="inputs-main">
+    <div class="inputs">
+      <comp-input
+        inputPlaceholder="Placeholder"
+        :disabled=false
+        type="text" 
+        @onChange="onChangeEMail"
+      />
 
 
+      <comp-input
+        inputPlaceholder="Placeholder2"
+        :disabled=false
+        type="password" 
+        inputStyle="error"  
+        @onChange="onChangePassword"
+      />
+     
+    </div>
+    <p class="text">E-Mail: {{email}}</p>
+    <p class="text">Password: {{password}}</p>
 
-/>
-<p>{{name}}</p>
-
-</div>
-  
-  
+  </div>
 </template>
 
 <script>
@@ -23,19 +31,47 @@ export default{
 
 components : {
   compInput
+},
+data() {
+    return {
+      email: "",
+      password: "",
+    };
+
+    
+  },
+
+methods: {
+  onChangeEMail(e){
+    this.email = e
+  },
+  onChangePassword(e){
+    this.password = e
+  }
+}
+
 }
 
 
-
-
-}
 </script>
 
 
 <style scoped>
-.input{
+.inputs {
+  display: flex;
   gap: 20px;
   margin-top: 40px;
   margin-left: 100px;
+}
+
+.inputs-main {
+  display: flex;
+  flex-direction: column;
+}
+.text {
+  margin-left: 100px;
+  background-color: whitesmoke;
+  width: 350px;
+  height: 30px;
 }
 </style>
