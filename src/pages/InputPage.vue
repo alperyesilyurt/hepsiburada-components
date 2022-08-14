@@ -4,16 +4,36 @@
       <comp-input
         inputPlaceholder="Placeholder"
         :disabled=false
-        type="text" 
+        type="email"
+        inputStyle="default-icon"
+        icon="email" 
         @onChange="onChangeEMail"
+        
       />
 
 
       <comp-input
         inputPlaceholder="Placeholder2"
         :disabled=false
+        type="password"
+        inputStyle="default-icon"
+        icon="password" 
+        @onChange="onChangePassword"
+      />
+      <comp-input
+        inputPlaceholder="Placeholder2"
+        :disabled=false
         type="password" 
-        inputStyle="error"  
+        inputStyle="error"
+        
+        @onChange="onChangePassword"
+      />
+      <comp-input
+        inputPlaceholder="Placeholder2"
+        :disabled=false
+        type="password" 
+       
+        
         @onChange="onChangePassword"
       />
      
