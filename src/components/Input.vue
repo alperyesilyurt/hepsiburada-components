@@ -8,7 +8,7 @@
     >
     <input
       class="input-content"
-      :class="`input-${inputStyle}`"
+      :class="`input-${checkPosition(iconPosition)}`"
       :placeholder="inputPlaceholder"
       :type="type"
       @input="onChange"
@@ -38,7 +38,17 @@ export default {
         this.icon = "lock";
       }
     },
+    checkPosition(iconPosition) {
+      if (this.iconPosition == "left") {
+        return "default-icon";
+      } else if (this.iconPosition == "normal") {
+        return "default-no-icon";
+      } else if (this.iconPosition == "right") {
+        return "default-right-icon";
+      }
+    },
   },
+
   props: {
     inputPlaceholder: {
       type: String,
@@ -47,10 +57,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-    },
-    inputStyle: {
-      type: String,
-      default: "default-no-icon",
     },
     type: {
       type: String,
@@ -63,6 +69,10 @@ export default {
     hint: {
       type: String,
       default: "",
+    },
+    iconPosition: {
+      type: String,
+      default: "left",
     },
   },
 };
@@ -85,7 +95,7 @@ export default {
     outline: 2px solid #ff6000;
     background: #ffffff;
   }
- 
+
   &-default-icon {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -94,6 +104,12 @@ export default {
   }
   &-default-no-icon {
     padding: 12px;
+  }
+  &-default-right-icon {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 44px;
+    padding-left: 12px;
   }
 
   &-error {

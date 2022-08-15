@@ -5,8 +5,8 @@
         inputPlaceholder="Email"
         :disabled="false"
         type="email"
-        inputStyle="default-icon"
         icon="email"
+        iconPosition="left"
         @onChange="onChangeEMail"
       />
 
@@ -14,21 +14,16 @@
         inputPlaceholder="Password"
         :disabled="false"
         type="password"
-        inputStyle="default-icon"
         icon="lock"
+        iconPosition="right"
         @onChange="onChangePassword"
       />
-
       <comp-input
-        inputPlaceholder="Placeholder2"
+        inputPlaceholder="Password"
         :disabled="false"
-        type="text"
-      />
-
-      <comp-input
-        inputPlaceholder="Placeholder2"
-        :disabled="false"
-        type="text"
+        type="password"
+        iconPosition="normal"
+        @onChange="onChangePassword"
       />
     </div>
     <p class="text">E-Mail: {{ email }}</p>
