@@ -3,69 +3,67 @@
     <div class="inputs">
       <comp-input
         inputPlaceholder="Placeholder"
-        :disabled=false
+        :disabled="false"
         type="email"
         inputStyle="default-icon"
-        icon="email" 
+        icon="email"
         @onChange="onChangeEMail"
-        
       />
-
 
       <comp-input
         inputPlaceholder="Placeholder2"
-        :disabled=false
+        :disabled="false"
         type="password"
         inputStyle="default-icon"
-        icon="key" 
+        icon="lock"
         @onChange="onChangePassword"
       />
-      
+
       <comp-input
         inputPlaceholder="Placeholder2"
-        :disabled=false
-        type="password" 
-       
-        
+        :disabled="false"
+        type="text"
         @onChange="onChangePassword"
+        
       />
-     
-    </div>
-    <p class="text">E-Mail: {{email}}</p>
-    <p class="text">Password: {{password}}</p>
 
+      <comp-input
+        inputPlaceholder="Placeholder2"
+        :disabled="false"
+        type="text"
+        @onChange="onChangePassword"
+        inputStyle="default-icon-password"
+      />
+
+    </div>
+    <p class="text">E-Mail: {{ email }}</p>
+    <p class="text">Password: {{ password }}</p>
   </div>
 </template>
 
 <script>
-import compInput from "../components/Input.vue"
+import compInput from "../components/Input.vue";
 
-export default{
-
-components : {
-  compInput
-},
-data() {
+export default {
+  components: {
+    compInput,
+  },
+  data() {
     return {
       email: "",
       password: "",
     };
-
-    
   },
 
-methods: {
-  onChangeEMail(e){
-    this.email = e
+  methods: {
+    onChangeEMail(e) {
+      this.email = e;
+    },
+    onChangePassword(e) {
+      this.password = e;
+    },
   },
-  onChangePassword(e){
-    this.password = e
-  }
-}
-
-}
-
-
+};
 </script>
 
 
@@ -86,6 +84,6 @@ methods: {
   background-color: whitesmoke;
   width: 350px;
   height: 30px;
-  border-radius:8px ;
+  border-radius: 8px;
 }
 </style>

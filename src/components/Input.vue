@@ -1,22 +1,38 @@
 <template>
   <div class="input">
-    <i class="material-icons input__icon">{{ icon }}</i>
-    <input
+    <i v-if="checkIcon" @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
+    <input 
       class="input-content"
       :class="`input-${inputStyle}`"
       :placeholder="inputPlaceholder"
       :type="type"
       @input="onChange"
-    />
+    /> 
   </div>
-  
 </template>
 
 <script>
+
 export default {
   methods: {
     onChange(event) {
       this.$emit("onChange", event.target.value);
+    },
+    checkIcon() {
+      if (this.icon) {
+        return true
+      } else {
+        return false
+      }
+    },
+    showPassword() {
+      if (this.icon == "lock") {
+        this.type = "text";
+        this.icon = "visibility"
+      } else if (this.icon == "visibility"){
+        this.type = "password";
+        this.icon = "lock";
+      }
     },
   },
   props: {
@@ -66,9 +82,9 @@ export default {
     background: #ffffff;
   }
   &-content:filled {
-    outline: 2px solid #DADADA;
-    background: #FFFFFF;
-    padding :10px;
+    outline: 2px solid #dadada;
+    background: #ffffff;
+    padding: 10px;
   }
 
   &-default-icon {
@@ -80,6 +96,9 @@ export default {
   &-default-no-icon {
     padding: 12px;
   }
+  &-default-icon-password {
+    padding: 12px;
+  }
 
   &-error {
     background: #ffe5e5;
@@ -87,7 +106,6 @@ export default {
     padding: 12px;
   }
   &-error:focus {
-    
     outline: 0px;
   }
   .input__icon {
@@ -98,6 +116,7 @@ export default {
     margin-right: 10px;
     margin-top: 8px;
     color: #9b9b9b;
+    cursor: pointer;
   }
 }
 </style>
