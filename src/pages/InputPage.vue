@@ -2,7 +2,7 @@
   <div class="inputs-main">
     <div class="inputs">
       <comp-input
-        inputPlaceholder="Email"
+        Placeholder="Email"
         :disabled="false"
         type="email"
         icon="email"
@@ -11,7 +11,7 @@
       />
 
       <comp-input
-        inputPlaceholder="Password"
+        Placeholder="Password"
         :disabled="false"
         type="password"
         icon="lock"
@@ -19,11 +19,11 @@
         @onChange="onChangePassword"
       />
       <comp-input
-        inputPlaceholder="Password"
+        Placeholder="Placeholder"
         :disabled="false"
         type="password"
-        iconPosition="normal"
-        @onChange="onChangePassword"
+        iconPosition="none"
+
       />
     </div>
     <p class="text">E-Mail: {{ email }}</p>

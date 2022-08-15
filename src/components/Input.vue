@@ -1,15 +1,13 @@
 <template>
   <div class="input">
-    <i
-      v-if="checkIcon"
-      @click="showPassword"
-      class="material-icons input__icon"
-      >{{ icon }}</i
-    >
+    <div class="icon-div" :class="`${checkIconPosition(iconPosition)}`">
+      <i @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
+    </div>
+
     <input
       class="input-content"
       :class="`input-${checkPosition(iconPosition)}`"
-      :placeholder="inputPlaceholder"
+      :placeholder="Placeholder"
       :type="type"
       @input="onChange"
     />
@@ -22,13 +20,6 @@ export default {
     onChange(event) {
       this.$emit("onChange", event.target.value);
     },
-    checkIcon() {
-      if (this.icon) {
-        return true;
-      } else {
-        return false;
-      }
-    },
     showPassword() {
       if (this.icon == "lock") {
         this.type = "text";
@@ -38,19 +29,28 @@ export default {
         this.icon = "lock";
       }
     },
-    checkPosition(iconPosition) {
+    checkPosition() {
       if (this.iconPosition == "left") {
         return "default-icon";
-      } else if (this.iconPosition == "normal") {
+      } else if (this.iconPosition == "none") {
         return "default-no-icon";
       } else if (this.iconPosition == "right") {
         return "default-right-icon";
       }
     },
+    checkIconPosition() {
+      if (this.iconPosition == "left") {
+        return "icon-left";
+      } else if (this.iconPosition == "right") {
+        return "icon-right";
+      } else if (this.iconPosition == "none") {
+        return "icon-none";
+      }
+    },
   },
 
   props: {
-    inputPlaceholder: {
+    Placeholder: {
       type: String,
       default: "",
     },
@@ -66,13 +66,13 @@ export default {
       type: String,
       default: "",
     },
-    hint: {
-      type: String,
-      default: "",
-    },
     iconPosition: {
       type: String,
       default: "left",
+    },
+    hint: {
+      type: String,
+      default: "",
     },
   },
 };
@@ -129,6 +129,33 @@ export default {
     margin-top: 8px;
     color: #9b9b9b;
     cursor: pointer;
+  }
+
+  .icon-left {
+    & .input__icon {
+      margin-left: 14px;
+    }
+  }
+  
+  .icon-right {
+    & .input__icon {
+      margin-left: 160px;
+    }
+  }
+
+  .icon-none {
+    & .input__icon {
+      width: 0px;
+      height: 0px;
+    }
+  }
+
+  .icon-div:focus{
+    & .input__icon {
+    color: #ff6000;
+    
+  }
+
   }
 }
 </style>
