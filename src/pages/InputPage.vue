@@ -17,17 +17,10 @@
         :disabled=false
         type="password"
         inputStyle="default-icon"
-        icon="password" 
+        icon="key" 
         @onChange="onChangePassword"
       />
-      <comp-input
-        inputPlaceholder="Placeholder2"
-        :disabled=false
-        type="password" 
-        inputStyle="error"
-        
-        @onChange="onChangePassword"
-      />
+      
       <comp-input
         inputPlaceholder="Placeholder2"
         :disabled=false
@@ -93,5 +86,6 @@ methods: {
   background-color: whitesmoke;
   width: 350px;
   height: 30px;
+  border-radius:8px ;
 }
 </style>
