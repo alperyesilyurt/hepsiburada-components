@@ -1,7 +1,8 @@
 <template>
   <div class="input">
     <div class="icon-div" :class="`${checkIconPosition(iconPosition)}`">
-      <i @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
+      <i id="icon-id" @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
+      
     </div>
 
     <input
@@ -10,6 +11,7 @@
       :placeholder="Placeholder"
       :type="type"
       @input="onChange"
+      @click="focusFunc"
     />
   </div>
 </template>
@@ -27,6 +29,9 @@ export default {
       } else if (this.icon == "visibility") {
         this.type = "password";
         this.icon = "lock";
+      }
+      else if(this.icon == "numbers"){
+        console.log("numara sekmesi acıldı")
       }
     },
     checkPosition() {
@@ -47,6 +52,10 @@ export default {
         return "icon-none";
       }
     },
+    focusFunc(){
+        document.getElementById("icon-id").style.color="#ff6000";
+        
+    }
   },
 
   props: {

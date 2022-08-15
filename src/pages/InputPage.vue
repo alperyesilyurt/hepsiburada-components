@@ -19,6 +19,14 @@
         @onChange="onChangePassword"
       />
       <comp-input
+        Placeholder="Number"
+        :disabled="false"
+        type="password"
+        iconPosition="left"
+        icon="numbers"
+
+      />
+      <comp-input
         Placeholder="Placeholder"
         :disabled="false"
         type="password"
