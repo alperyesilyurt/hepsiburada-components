@@ -23,18 +23,13 @@
         inputPlaceholder="Placeholder2"
         :disabled="false"
         type="text"
-        @onChange="onChangePassword"
-        
       />
 
       <comp-input
         inputPlaceholder="Placeholder2"
         :disabled="false"
         type="text"
-        @onChange="onChangePassword"
-        inputStyle="default-icon-password"
       />
-
     </div>
     <p class="text">E-Mail: {{ email }}</p>
     <p class="text">Password: {{ password }}</p>
@@ -81,9 +76,8 @@ export default {
 }
 .text {
   margin-left: 100px;
-  background-color: whitesmoke;
-  width: 350px;
-  height: 30px;
+  background-color: #e5e5e5;
+  padding: 12px;
   border-radius: 8px;
 }
 </style>

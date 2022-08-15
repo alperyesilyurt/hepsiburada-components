@@ -1,18 +1,22 @@
 <template>
   <div class="input">
-    <i v-if="checkIcon" @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
-    <input 
+    <i
+      v-if="checkIcon"
+      @click="showPassword"
+      class="material-icons input__icon"
+      >{{ icon }}</i
+    >
+    <input
       class="input-content"
       :class="`input-${inputStyle}`"
       :placeholder="inputPlaceholder"
       :type="type"
       @input="onChange"
-    /> 
+    />
   </div>
 </template>
 
 <script>
-
 export default {
   methods: {
     onChange(event) {
@@ -20,16 +24,16 @@ export default {
     },
     checkIcon() {
       if (this.icon) {
-        return true
+        return true;
       } else {
-        return false
+        return false;
       }
     },
     showPassword() {
       if (this.icon == "lock") {
         this.type = "text";
-        this.icon = "visibility"
-      } else if (this.icon == "visibility"){
+        this.icon = "visibility";
+      } else if (this.icon == "visibility") {
         this.type = "password";
         this.icon = "lock";
       }
@@ -96,9 +100,6 @@ export default {
   &-default-no-icon {
     padding: 12px;
   }
-  &-default-icon-password {
-    padding: 12px;
-  }
 
   &-error {
     background: #ffe5e5;
@@ -109,7 +110,7 @@ export default {
     outline: 0px;
   }
   .input__icon {
-    position: fixed;
+    position: absolute;
     width: 20px;
     height: 20px;
     margin-left: 14px;

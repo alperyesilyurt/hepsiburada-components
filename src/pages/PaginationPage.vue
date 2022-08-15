@@ -1,27 +1,17 @@
 <template>
-<div >
- 
-
-</div>
-  
-  
+  <div></div>
 </template>
 
 <script>
-import compPagination from "../components/Pagination.vue"
+import compPagination from "../components/Pagination.vue";
 
-
-export default{
- 
-components:{
-  compPagination
-}
-
-
-}
+export default {
+  components: {
+    compPagination,
+  },
+};
 </script>
 
 
 <style scoped>
-
 </style>
