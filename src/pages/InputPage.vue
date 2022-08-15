@@ -2,7 +2,7 @@
   <div class="inputs-main">
     <div class="inputs">
       <comp-input
-        inputPlaceholder="Placeholder"
+        inputPlaceholder="Email"
         :disabled="false"
         type="email"
         inputStyle="default-icon"
@@ -11,7 +11,7 @@
       />
 
       <comp-input
-        inputPlaceholder="Placeholder2"
+        inputPlaceholder="Password"
         :disabled="false"
         type="password"
         inputStyle="default-icon"

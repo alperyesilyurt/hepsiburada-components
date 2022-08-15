@@ -85,12 +85,7 @@ export default {
     outline: 2px solid #ff6000;
     background: #ffffff;
   }
-  &-content:filled {
-    outline: 2px solid #dadada;
-    background: #ffffff;
-    padding: 10px;
-  }
-
+ 
   &-default-icon {
     padding-top: 12px;
     padding-bottom: 12px;
