@@ -1,5 +1,5 @@
 <template>
- <p>hello Tab</p>   
+ <p>hello Pagination</p>   
 </template>
 
 <script>

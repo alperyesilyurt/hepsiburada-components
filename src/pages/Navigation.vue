@@ -15,19 +15,19 @@
     <router-link class="pages" tag="a" to="tabpage">
       <a class="nav-link" href="#">Tab Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="">
+    <router-link class="pages" tag="a" to="modalpage">
       <a class="nav-link" href="#">Modal Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="">
+    <router-link class="pages" tag="a" to="drawerpage">
       <a class="nav-link" href="#">Drawer Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="">
+    <router-link class="pages" tag="a" to="toastpage">
       <a class="nav-link" href="#">Toast Message Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="">
+    <router-link class="pages" tag="a" to="tablepage">
       <a class="nav-link" href="#">Table Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="">
+    <router-link class="pages" tag="a" to="paginationpage">
       <a class="nav-link" href="#">Pagination Page</a>
     </router-link>
   </div>
