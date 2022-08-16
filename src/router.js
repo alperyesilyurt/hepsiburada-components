@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import ButtonPage from "./pages/ButtonPage";
 import InputPage from "./pages/InputPage";
-import PaginationPage from "./pages/PaginationPage";
+import CheckboxAndRadioPage from "./pages/CheckboxAndRadioPage";
 
 
 Vue.use(VueRouter)
@@ -28,8 +28,8 @@ export const router = new VueRouter({
         },
 
         { 
-            path : "/paginationpage" , 
-            component : PaginationPage,
+            path : "/checkboxandradiopage" , 
+            component : CheckboxAndRadioPage,
         },
 
     ],

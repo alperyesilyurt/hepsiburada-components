@@ -53,7 +53,7 @@ export default {
       }
     },
     focusFunc(){
-        document.getElementById("icon-id").style.color="#ff6000";
+        //document.getElementById("icon-id").style.color="#ff6000";
         
     }
   },

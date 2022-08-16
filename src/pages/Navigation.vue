@@ -6,8 +6,8 @@
     <router-link class="pages" tag="a" to="inputpage">
       <a class="nav-link" href="#">Input Page</a>
     </router-link>
-    <router-link class="pages" tag="a" to="paginationpage">
-      <a class="nav-link" href="#">Pagination Page</a>
+    <router-link class="pages" tag="a" to="checkboxandradiopage">
+      <a class="nav-link" href="#">Checkbox-Radio Page</a>
     </router-link>
     <router-link class="pages" tag="a" to="">
       <a class="nav-link" href="#">Switch Page</a>
