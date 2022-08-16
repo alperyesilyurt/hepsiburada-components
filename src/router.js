@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import ButtonPage from "./pages/ButtonPage";
 import InputPage from "./pages/InputPage";
 import CheckboxAndRadioPage from "./pages/CheckboxAndRadioPage";
-import SwitchPage from "./pages/SwitchPage"
+import SwitchPage from "./pages/SwitchPage";
+import TabPage from "./pages/TabPage";
 
 
 Vue.use(VueRouter)
@@ -35,6 +36,10 @@ export const router = new VueRouter({
         { 
             path : "/switchpage" , 
             component : SwitchPage,
+        },
+        { 
+            path : "/tabpage" , 
+            component : TabPage,
         },
 
     ],

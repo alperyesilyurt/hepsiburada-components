@@ -66,7 +66,6 @@ export default {
 <style scoped>
 .buttons {
   gap: 20px;
-  margin-top: 40px;
-  margin-left: 100px;
+  margin:50px;
 }
 </style>

@@ -99,6 +99,7 @@ export default {
 
 <style scoped>
 .check-radio{
+  margin:50px;
   display: flex;
   flex-direction: column;
   gap:50px

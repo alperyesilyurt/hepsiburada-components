@@ -12,8 +12,23 @@
     <router-link class="pages" tag="a" to="switchpage">
       <a class="nav-link" href="#">Switch Page</a>
     </router-link>
+    <router-link class="pages" tag="a" to="tabpage">
+      <a class="nav-link" href="#">Tab Page</a>
+    </router-link>
     <router-link class="pages" tag="a" to="">
-      <a class="nav-link" href="#">Checkbox Page</a>
+      <a class="nav-link" href="#">Modal Page</a>
+    </router-link>
+    <router-link class="pages" tag="a" to="">
+      <a class="nav-link" href="#">Drawer Page</a>
+    </router-link>
+    <router-link class="pages" tag="a" to="">
+      <a class="nav-link" href="#">Toast Message Page</a>
+    </router-link>
+    <router-link class="pages" tag="a" to="">
+      <a class="nav-link" href="#">Table Page</a>
+    </router-link>
+    <router-link class="pages" tag="a" to="">
+      <a class="nav-link" href="#">Pagination Page</a>
     </router-link>
   </div>
 </template>

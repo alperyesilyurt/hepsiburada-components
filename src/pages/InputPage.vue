@@ -69,16 +69,16 @@ export default {
 .inputs {
   display: flex;
   gap: 20px;
-  margin-top: 40px;
-  margin-left: 100px;
+
 }
 
 .inputs-main {
   display: flex;
   flex-direction: column;
+  margin:50px;
 }
 .text {
-  margin-left: 100px;
+ 
   background-color: #e5e5e5;
   padding: 12px;
   border-radius: 8px;
