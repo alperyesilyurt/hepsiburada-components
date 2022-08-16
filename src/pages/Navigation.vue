@@ -38,36 +38,33 @@ export default {};
 </script>
 
 <style scoped>
+
 .navigation {
   display: flex;
-  flex-direction: column;
-  background-color: #ff6000;
-  border-radius: 8px;
-  padding: 12px 16px;
-  gap: 16px;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  
 }
 
 .pages {
   display: flex;
   padding: 12px 16px;
   background-color: #ffffff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 2px 0px;
   font-family: sans-serif;
   border-radius: 8px;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
+  
 }
 .pages:hover {
-  background-color: #bf4800;
+  background-color: #32a848;
 }
+
 
 .nav-link {
   text-decoration: none;
   color: black;
 }
-.nav-link:hover {
-  text-decoration: none;
-  color: white;
-}
+
 </style>

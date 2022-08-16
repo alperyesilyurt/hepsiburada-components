@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="main-div">
     <Navigation></Navigation>
     <router-view></router-view>
 </div>
@@ -19,7 +19,10 @@ export default {
 </script>
 
 <style scoped>
-div{
+
+.main-div{
     display: flex;
+    flex-direction: column;
+   
 }
 </style>

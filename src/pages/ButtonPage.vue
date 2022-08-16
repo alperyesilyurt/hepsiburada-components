@@ -65,6 +65,8 @@ export default {
 
 <style scoped>
 .buttons {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
   margin:50px;
 }
