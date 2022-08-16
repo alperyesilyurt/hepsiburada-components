@@ -7,7 +7,7 @@
       <a class="nav-link" href="#">Input Page</a>
     </router-link>
     <router-link class="pages" tag="a" to="checkboxandradiopage">
-      <a class="nav-link" href="#">Checkbox-Radio Page</a>
+      <a class="nav-link" href="#">Checkbox & Radio Page</a>
     </router-link>
     <router-link class="pages" tag="a" to="switchpage">
       <a class="nav-link" href="#">Switch Page</a>
@@ -55,6 +55,8 @@ export default {};
   font-family: sans-serif;
   border-radius: 8px;
   text-decoration: none;
+  text-align: center;
+  align-items: center;
   
 }
 .pages:hover {

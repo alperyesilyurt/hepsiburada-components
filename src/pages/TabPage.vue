@@ -1,10 +1,6 @@
 <template>
   <div class="tab">
-    <compTab 
-    
-    
-    
-    />
+    <compTab />
   </div>
 </template>
 
@@ -14,16 +10,16 @@ export default {
   components: {
     compTab,
   },
-   methods: {
+  methods: {
     func1() {
       console.log("func1");
-    },}
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
-.tab{
-    margin: 50px;
+.tab {
+  margin: 50px;
 }
 </style>

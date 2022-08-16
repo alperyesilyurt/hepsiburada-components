@@ -24,14 +24,12 @@
         type="password"
         iconPosition="left"
         icon="numbers"
-
       />
       <comp-input
         Placeholder="Placeholder"
         :disabled="false"
         type="password"
         iconPosition="none"
-
       />
     </div>
     <p class="text">E-Mail: {{ email }}</p>
@@ -69,16 +67,15 @@ export default {
 .inputs {
   display: flex;
   gap: 20px;
-
 }
 
 .inputs-main {
   display: flex;
   flex-direction: column;
-  margin:50px;
+  margin: 50px;
 }
 .text {
- 
+  width: 784px;
   background-color: #e5e5e5;
   padding: 12px;
   border-radius: 8px;
