@@ -7,6 +7,7 @@
         type="email"
         icon="email"
         iconPosition="left"
+        :status="true"
         @onChange="onChangeEMail"
       />
 
@@ -16,6 +17,7 @@
         type="password"
         icon="lock"
         iconPosition="right"
+        :status="false"
         @onChange="onChangePassword"
       />
       <comp-input

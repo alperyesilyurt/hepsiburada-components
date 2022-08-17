@@ -2,11 +2,11 @@
   <div class="input">
     <div :class="`icon-${iconPosition}`">
       <i @click="showPassword" class="material-icons input-icon">
-      {{ icon }}
+        {{ icon }}
       </i>
     </div>
     <input
-      :class="`input-content input-content-default-${iconPosition}`"
+      :class="`input-content ${showStatus(status)} ${showStatus(status)}-${iconPosition}`"
       :placeholder="Placeholder"
       :type="type"
       @input="onChange"
@@ -27,8 +27,15 @@ export default {
       } else if (this.icon == "visibility") {
         this.type = "password";
         this.icon = "lock";
-      } 
-    }
+      }
+    },
+    showStatus(status) {
+      if (status == true) {
+        return "input-content-default";
+      } else {
+        return "input-content-error";
+      }
+    },
   },
 
   props: {
@@ -42,7 +49,7 @@ export default {
     },
     type: {
       type: String,
-      default: "text",
+      default: "",
     },
     icon: {
       type: String,
@@ -56,7 +63,7 @@ export default {
       type: String,
       default: "",
     },
-    error: {
+    status: {
       type: Boolean,
       default: true,
     },
@@ -70,9 +77,8 @@ export default {
     color: #9b9b9b;
   }
   &-content {
-    border: none;
-    background: #e5e5e5;
     border-radius: 8px;
+
     &:hover {
       background: #f0f0f0;
     }
@@ -83,6 +89,9 @@ export default {
     }
 
     &-default {
+      background: #e5e5e5;
+      border: none;
+
       &-left {
         padding: 12px 12px 12px 44px;
       }
@@ -93,12 +102,22 @@ export default {
         padding: 12px 44px 12px 12px;
       }
     }
+
     &-error {
       background: #ffe5e5;
       border: 2px solid #fa0000;
-      padding: 12px;
+
       &:focus {
         outline: 0px;
+      }
+      &-left {
+        padding: 10px 12px 10px 44px;
+      }
+      &-none {
+        padding: 10px;
+      }
+      &-right {
+        padding: 10px 44px 10px 12px;
       }
     }
   }
