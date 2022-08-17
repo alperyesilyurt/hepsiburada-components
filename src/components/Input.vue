@@ -1,8 +1,12 @@
 <template>
   <div class="input">
     <div class="icon-div" :class="`${checkIconPosition(iconPosition)}`">
-      <i id="icon-id" @click="showPassword" class="material-icons input__icon">{{ icon }}</i>
-      
+      <i
+        id="icon-id"
+        @click="showPassword"
+        class="material-icons input__icon"
+        >{{ icon }}</i
+      >
     </div>
 
     <input
@@ -29,9 +33,8 @@ export default {
       } else if (this.icon == "visibility") {
         this.type = "password";
         this.icon = "lock";
-      }
-      else if(this.icon == "numbers"){
-        console.log("numara sekmesi acıldı")
+      } else if (this.icon == "numbers") {
+        console.log("numara sekmesi acıldı");
       }
     },
     checkPosition() {
@@ -52,10 +55,9 @@ export default {
         return "icon-none";
       }
     },
-    focusFunc(){
-        //document.getElementById("icon-id").style.color="#ff6000";
-        
-    }
+    focusFunc() {
+      //document.getElementById("icon-id").style.color="#ff6000";
+    },
   },
 
   props: {
@@ -96,13 +98,14 @@ export default {
     border: none;
     background: #e5e5e5;
     border-radius: 8px;
-  }
-  &-content:hover {
-    background: #f0f0f0;
-  }
-  &-content:focus {
-    outline: 2px solid #ff6000;
-    background: #ffffff;
+    &:hover {
+      background: #f0f0f0;
+    }
+
+    &:focus {
+      outline: 2px solid #ff6000;
+      background: #ffffff;
+    }
   }
 
   &-default-icon {
@@ -125,10 +128,11 @@ export default {
     background: #ffe5e5;
     border: 2px solid #fa0000;
     padding: 12px;
+    &:focus {
+      outline: 0px;
+    }
   }
-  &-error:focus {
-    outline: 0px;
-  }
+
   .input__icon {
     position: absolute;
     width: 20px;
@@ -145,7 +149,7 @@ export default {
       margin-left: 14px;
     }
   }
-  
+
   .icon-right {
     & .input__icon {
       margin-left: 160px;
@@ -159,12 +163,10 @@ export default {
     }
   }
 
-  .icon-div:focus{
+  .icon-div:focus {
     & .input__icon {
-    color: #ff6000;
-    
-  }
-
+      color: #ff6000;
+    }
   }
 }
 </style>

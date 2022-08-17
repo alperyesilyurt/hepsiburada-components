@@ -22,7 +22,7 @@ export default {
     },
     checkboxValue: {
       type: String,
-      default: "normal",
+      default: "",
     },
   },
 

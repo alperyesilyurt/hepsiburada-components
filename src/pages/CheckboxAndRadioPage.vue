@@ -6,6 +6,7 @@
         checkboxStyle="primary"
         checkboxSize="small"
         @checkFunc="func1"
+        
       />
       <compCheckbox
         checkboxStyle="primary"
