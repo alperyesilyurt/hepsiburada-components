@@ -5,6 +5,7 @@
       :disabled="false"
       buttonType="primary"
       buttonText="Primary"
+      icon="login"
     />
 
     <compButton
@@ -12,6 +13,7 @@
       :disabled="true"
       buttonType="variant"
       buttonText="Variant"
+      icon="bluetooth"
     />
 
     <compButton
@@ -19,7 +21,7 @@
       :disabled="false"
       buttonType="secondary"
       buttonText="Secondary"
-      icon="settings.svg"
+      icon="backup"
     />
 
     <compButton
@@ -27,7 +29,8 @@
       :disabled="false"
       buttonType="bordered"
       buttonText="Bordered"
-      icon="alert.svg"
+      icon="settings"
+
     />
 
     <compButton
@@ -35,7 +38,7 @@
       :disabled="false"
       buttonType="ghost"
       buttonText="Ghost"
-      icon="info.svg"
+      icon="info"
     />
   </div>
 </template>

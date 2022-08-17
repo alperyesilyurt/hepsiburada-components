@@ -6,7 +6,9 @@
       @click="handleButton($event)"
     >
       {{ buttonText }}
-      <img :src="require(`../assets/${icon}`)" />
+      <i class="material-icons input-icon">
+        {{ icon }}
+      </i>
     </button>
   </div>
 </template>
@@ -31,7 +33,7 @@ export default {
     },
     icon: {
       type: String,
-      default: "settings.svg",
+      default: "",
     },
   },
   methods: {
