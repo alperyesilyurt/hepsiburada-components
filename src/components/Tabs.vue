@@ -1,21 +1,22 @@
 <template >
   <div class="tab">
-    <ul class="tabs-ul">
-      <li v-for="tab in tabs" :key="tab" class="tabs-li">
-        <a
-          class="tabs-link"
-          :class="{ 'tabs-li-active': tab === selected }"
-          @click="setTab(tab)"
-        >
-          {{ tab }}
-        </a>
-      </li>
-    </ul>
-    <Divider
-    dividerSize=""
-    dividerType="hepsiburada"
-    />
-    <slot></slot>
+    <div>
+      <ul class="tabs-ul">
+        <li v-for="tab in tabs" :key="tab" class="tabs-li">
+          <a
+            class="tabs-link"
+            :class="{ 'tabs-li-active': tab === selected }"
+            @click="setTab(tab)"
+          >
+            {{ tab }}
+          </a>
+        </li>
+      </ul>
+
+      <slot></slot>
+    </div>
+    <Divider dividerSize="" dividerType="hepsiburada" />
+    <Divider class="divider2" dividerSize="" dividerType="normal" />
   </div>
 </template>
 
@@ -45,7 +46,9 @@ export default {
 
 <style lang="scss" scoped>
 .tab {
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .tabs-ul {
   display: flex;
@@ -67,5 +70,7 @@ export default {
   cursor: default;
   color: #9b9b9b;
 }
-
+.divider2 {
+  margin-top: 20px;
+}
 </style>
