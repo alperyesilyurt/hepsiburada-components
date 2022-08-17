@@ -1,19 +1,49 @@
-<template>
+<template >
   <div class="tab">
-    <compTab />
+    <Tabnav
+      :tabs="['Home', 'Settings', 'Profile', 'Basket', 'Favorites']"
+      :selected="selected"
+      @selected="setSelected"
+    >
+      <Tab :isSelected="selected === 'Home'">
+        <p class="text">welcome home</p>
+      </Tab>
+      <Tab :isSelected="selected === 'Settings'">
+        <p class="text">welcome settings</p>
+      </Tab>
+      <Tab :isSelected="selected === 'Profile'">
+        <p class="text">welcome profile</p>
+      </Tab>
+      <Tab :isSelected="selected === 'Basket'">
+        <p class="text">welcome basket</p>
+      </Tab>
+      <Tab :isSelected="selected === 'Favorites'">
+        <p class="text">welcome favorites</p>
+      </Tab>
+    </Tabnav>
   </div>
 </template>
 
 <script>
-import compTab from "../components/Tab.vue";
+import Tab from "../components/Tab.vue";
+import Tabnav from "../components/Tabs.vue";
+
 export default {
   components: {
-    compTab,
+    Tab,
+    Tabnav,
+    
   },
   methods: {
-    func1() {
-      console.log("func1");
+    setSelected(tab) {
+      console.log(this.selected);
+      this.selected = tab;
     },
+  },
+  data() {
+    return {
+      selected: "Home",
+    };
   },
 };
 </script>
@@ -22,4 +52,11 @@ export default {
 .tab {
   margin: 50px;
 }
+.text{
+  padding: 20px;
+  background-color: #dadada;
+  border-radius: 5px;
+  
+}
 </style>
+
