@@ -1,21 +1,15 @@
 <template>
   <div class="input">
-    <div class="icon-div" :class="`${checkIconPosition(iconPosition)}`">
-      <i
-        id="icon-id"
-        @click="showPassword"
-        class="material-icons input__icon"
-        >{{ icon }}</i
-      >
+    <div :class="`icon-${iconPosition}`">
+      <i @click="showPassword" class="material-icons input-icon">
+      {{ icon }}
+      </i>
     </div>
-
     <input
-      class="input-content"
-      :class="`input-${checkPosition(iconPosition)}`"
+      :class="`input-content input-content-default-${iconPosition}`"
       :placeholder="Placeholder"
       :type="type"
       @input="onChange"
-      @click="focusFunc"
     />
   </div>
 </template>
@@ -33,31 +27,8 @@ export default {
       } else if (this.icon == "visibility") {
         this.type = "password";
         this.icon = "lock";
-      } else if (this.icon == "numbers") {
-        console.log("numara sekmesi acıldı");
-      }
-    },
-    checkPosition() {
-      if (this.iconPosition == "left") {
-        return "default-icon";
-      } else if (this.iconPosition == "none") {
-        return "default-no-icon";
-      } else if (this.iconPosition == "right") {
-        return "default-right-icon";
-      }
-    },
-    checkIconPosition() {
-      if (this.iconPosition == "left") {
-        return "icon-left";
-      } else if (this.iconPosition == "right") {
-        return "icon-right";
-      } else if (this.iconPosition == "none") {
-        return "icon-none";
-      }
-    },
-    focusFunc() {
-      //document.getElementById("icon-id").style.color="#ff6000";
-    },
+      } 
+    }
   },
 
   props: {
@@ -85,6 +56,10 @@ export default {
       type: String,
       default: "",
     },
+    error: {
+      type: Boolean,
+      default: true,
+    },
   },
 };
 </script>
@@ -106,66 +81,54 @@ export default {
       outline: 2px solid #ff6000;
       background: #ffffff;
     }
-  }
 
-  &-default-icon {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 12px;
-    padding-left: 44px;
-  }
-  &-default-no-icon {
-    padding: 12px;
-  }
-  &-default-right-icon {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 44px;
-    padding-left: 12px;
-  }
-
-  &-error {
-    background: #ffe5e5;
-    border: 2px solid #fa0000;
-    padding: 12px;
-    &:focus {
-      outline: 0px;
+    &-default {
+      &-left {
+        padding: 12px 12px 12px 44px;
+      }
+      &-none {
+        padding: 12px;
+      }
+      &-right {
+        padding: 12px 44px 12px 12px;
+      }
+    }
+    &-error {
+      background: #ffe5e5;
+      border: 2px solid #fa0000;
+      padding: 12px;
+      &:focus {
+        outline: 0px;
+      }
     }
   }
 
-  .input__icon {
+  .input-icon {
     position: absolute;
     width: 20px;
     height: 20px;
-    margin-left: 14px;
     margin-right: 10px;
     margin-top: 8px;
     color: #9b9b9b;
     cursor: pointer;
   }
 
-  .icon-left {
-    & .input__icon {
-      margin-left: 14px;
+  .icon {
+    &-left {
+      & .input-icon {
+        margin-left: 14px;
+      }
     }
-  }
-
-  .icon-right {
-    & .input__icon {
-      margin-left: 160px;
+    &-none {
+      & .input-icon {
+        width: 0px;
+        height: 0px;
+      }
     }
-  }
-
-  .icon-none {
-    & .input__icon {
-      width: 0px;
-      height: 0px;
-    }
-  }
-
-  .icon-div:focus {
-    & .input__icon {
-      color: #ff6000;
+    &-right {
+      & .input-icon {
+        margin-left: 160px;
+      }
     }
   }
 }
