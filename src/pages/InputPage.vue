@@ -76,7 +76,7 @@ export default {
 }
 .text {
   width: 784px;
-  background-color: #e5e5e5;
+  background-color:  whitesmoke;
   padding: 12px;
   border-radius: 8px;
 }

@@ -54,7 +54,7 @@ export default {
 }
 .text{
   padding: 20px;
-  background-color: #dadada;
+  background-color:  whitesmoke;
   border-radius: 5px;
   
 }
