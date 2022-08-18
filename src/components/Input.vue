@@ -6,7 +6,9 @@
       </i>
     </div>
     <input
-      :class="`input-content ${showStatus(status)} ${showStatus(status)}-${iconPosition}`"
+      :class="`input-content ${showStatus(status)} ${showStatus(
+        status
+      )}-${iconPosition}`"
       :placeholder="Placeholder"
       :type="type"
       @input="onChange"
@@ -133,21 +135,30 @@ export default {
   }
 
   .icon {
-    &-left {
-      & .input-icon {
-        margin-left: 14px;
+    $margins: (
+      left: 14,
+      none: 0,
+      right: 160,
+    );
+    $widths: (
+      left: 20,
+      none: 0,
+      right: 20,
+    );
+
+    @each $name, $margin in $margins {
+      &-#{$name}{
+        & .input-icon {
+        margin-left: $margin + px;
       }
+      }      
     }
-    &-none {
-      & .input-icon {
-        width: 0px;
-        height: 0px;
+    @each $name, $width in $widths {
+      &-#{$name}{
+        & .input-icon {
+        width: $width + px ;
       }
-    }
-    &-right {
-      & .input-icon {
-        margin-left: 160px;
-      }
+      }      
     }
   }
 }
