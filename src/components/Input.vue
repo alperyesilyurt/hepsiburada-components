@@ -100,16 +100,20 @@ export default {
       background: #e5e5e5;
       border: none;
 
-      &-left {
-        padding: 12px 12px 12px 44px;
-      }
-      &-none {
-        padding: 12px;
-      }
-      &-right {
-        padding: 12px 44px 12px 12px;
-      }
+      $paddings: (
+            left: 12px 12px 12px 44px,
+            none: 12px,
+            right: 12px 44px 12px 12px,
+          );
+          
+      @each $name, $padding in $paddings {
+        &-#{$name} {
+            padding: $padding ;
+          }
+        }
     }
+      
+    
 
     &-error {
       background: #ffe5e5;
