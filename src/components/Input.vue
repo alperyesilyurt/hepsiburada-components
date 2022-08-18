@@ -13,6 +13,7 @@
       :type="type"
       @input="onChange"
     />
+    <p v-if="this.status == false" class="error-text">{{ hint }}</p>
   </div>
 </template>
 
@@ -63,7 +64,7 @@ export default {
     },
     hint: {
       type: String,
-      default: "",
+      default: "Error message is here",
     },
     status: {
       type: Boolean,
@@ -77,6 +78,11 @@ export default {
 .input {
   ::placeholder {
     color: #9b9b9b;
+  }
+  .error-text {
+    color: #fa0000;
+    font-size: 12px;
+    margin-top: 8px;
   }
   &-content {
     border-radius: 8px;
@@ -147,18 +153,18 @@ export default {
     );
 
     @each $name, $margin in $margins {
-      &-#{$name}{
+      &-#{$name} {
         & .input-icon {
-        margin-left: $margin + px;
+          margin-left: $margin + px;
+        }
       }
-      }      
     }
     @each $name, $width in $widths {
-      &-#{$name}{
+      &-#{$name} {
         & .input-icon {
-        width: $width + px ;
+          width: $width + px;
+        }
       }
-      }      
     }
   }
 }

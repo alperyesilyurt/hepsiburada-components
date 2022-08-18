@@ -13,23 +13,24 @@
 
       <comp-input
         Placeholder="Password"
-        :disabled="false"
+        :disabled="true"
         type="password"
         icon="lock"
         iconPosition="right"
         :status="false"
+        hint="Lütfen tekrar deneyiniz!"
         @onChange="onChangePassword"
       />
       <comp-input
         Placeholder="Number"
-        :disabled="false"
+        :disabled="true"
         type="password"
         iconPosition="left"
         icon="numbers"
       />
       <comp-input
         Placeholder="Placeholder"
-        :disabled="false"
+        :disabled="true"
         type="password"
         iconPosition="none"
       />
