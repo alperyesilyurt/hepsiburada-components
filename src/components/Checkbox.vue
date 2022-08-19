@@ -21,24 +21,31 @@ export default {
       type: String,
       default: "normal",
     },
-    clicked: {
-      type: String,
-      default: "unclicked",
-    },
     selected: {
       type: Boolean,
       default: false,
     },
+    clicked: {
+      type: String,
+      default: "unclicked",
+    },
+    
   },
 
   methods: {
     checkFunc(e) {
-      if (this.clicked == "clicked") {
-        this.clicked = "unclicked";
-      } else {
-        this.clicked = "clicked";
+      if(this.selected==false){
+        this.clicked="clicked"
+        this.selected=true
+      }
+      else{
+        this.clicked="unclicked"
+        this.selected=false
       }
       this.$emit("checkFunc", e);
+      console.log("selected:",this.selected);
+      console.log("clicked:", this.clicked);
+      console.log("key" ,e)
     },
     
   },
