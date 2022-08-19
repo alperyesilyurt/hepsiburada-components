@@ -1,6 +1,6 @@
 <template >
   <div class="tab">
-    <Tabnav
+    <Tabs
       :tabs="['Home', 'Settings', 'Profile', 'Basket', 'Favorites']"
       :selected="selected"
       @selected="setSelected"
@@ -20,18 +20,18 @@
       <Tab :isSelected="selected === 'Favorites'">
         <p class="text">welcome favorites</p>
       </Tab>
-    </Tabnav>
+    </Tabs>
   </div>
 </template>
 
 <script>
 import Tab from "../components/Tab.vue";
-import Tabnav from "../components/Tabs.vue";
+import Tabs from "../components/Tabs.vue";
 
 export default {
   components: {
     Tab,
-    Tabnav,
+    Tabs,
     
   },
   methods: {
