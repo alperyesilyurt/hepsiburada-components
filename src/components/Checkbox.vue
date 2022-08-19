@@ -1,11 +1,12 @@
 <template>
   <div class="checkbox">
-    <input
-      :class="`${checkboxStyle}-checkbox-${checkboxSize}`"
-      type="checkbox"
+    <div
+      class="checkbox-content"
+      :class="`checkbox-content-${checkboxStyle}-${checkboxSize}-${clicked}`"
       @click="checkFunc"
-      :value="checkboxValue"
-    />
+    >
+    <img class="icon" src="../assets/checkbox-icon.svg">
+    </div>
   </div>
 </template>
 
@@ -20,174 +21,90 @@ export default {
       type: String,
       default: "normal",
     },
-    checkboxValue: {
+    clicked: {
       type: String,
-      default: "",
+      default: "unclicked",
+    },
+    selected: {
+      type: Boolean,
+      default: false,
     },
   },
 
   methods: {
     checkFunc(e) {
+      if (this.clicked == "clicked") {
+        this.clicked = "unclicked";
+      } else {
+        this.clicked = "clicked";
+      }
       this.$emit("checkFunc", e);
     },
+    
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.primary-checkbox-small {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  border: 2px solid #cccccc;
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-  width: 16px;
-  height: 16px;
+.checkbox {
+  &-content {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    
+    &-primary {
+      $sizes: (
+        small: 16,
+        medium: 20,
+        large: 24,
+      );
+      @each $name, $size in $sizes {
+        &-#{$name}-unclicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size/3 +px;
+        }
+        &-#{$name}-unclicked:hover {
+          border: 2px solid #ff904c;
+        }
+        &-#{$name}-clicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size/3 +px;
+          background-color: #ff6000;
+          border: 2px solid #ff6000;
+        }
+      }
+    }
 
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
-    background: #ff6000;
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 12px;
-    position: absolute;
-    left: 1px;
-    color: #ffffff;
+    &-secondary {
+      $sizes: (
+        small: 16,
+        medium: 20,
+        large: 24,
+      );
+      @each $name, $size in $sizes {
+        &-#{$name}-unclicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size/3 +px;
+        }
+        &-#{$name}-unclicked:hover {
+          border: 2px solid #99aaff;
+        }
+        &-#{$name}-clicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size/3 +px;
+          background-color: #6b83fa;
+          border: 2px solid #6b83fa;
+        }
+      }
+    }
   }
 }
-
-.primary-checkbox-normal {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #cccccc;
-  border-radius: 6px;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
-    background: #ff6000;
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 14px;
-    position: absolute;
-
-    left: 2px;
-    color: #ffffff;
-  }
-}
-.primary-checkbox-large {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #cccccc;
-  border-radius: 8px;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
-    background: #ff6000;
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 18px;
-    position: absolute;
-
-    left: 3px;
-    color: #ffffff;
-  }
-}
-
-.secondary-checkbox-small {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #cccccc;
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-    background: #6b83fa;
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 12px;
-    position: absolute;
-    left: 1px;
-    color: #ffffff;
-  }
-}
-.secondary-checkbox-normal {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #cccccc;
-  border-radius: 6px;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-    background: #6b83fa;
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 14px;
-    position: absolute;
-    left: 2px;
-    color: #ffffff;
-  }
-}
-.secondary-checkbox-large {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #cccccc;
-  border-radius: 8px;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-    background: #6b83fa;
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "\2714";
-    font-size: 18px;
-    position: absolute;
-
-    left: 3px;
-    color: #ffffff;
-  }
+.icon{
+  padding: 3px;
 }
 </style>

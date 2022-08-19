@@ -10,7 +10,7 @@
       />
       <compCheckbox
         checkboxStyle="primary"
-        checkboxSize="normal"
+        checkboxSize="medium"
         @checkFunc="func2"
       />
       <compCheckbox
@@ -26,7 +26,7 @@
 
       <compCheckbox
         checkboxStyle="secondary"
-        checkboxSize="normal"
+        checkboxSize="medium"
         @checkFunc="func2"
       />
 
