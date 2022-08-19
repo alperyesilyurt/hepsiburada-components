@@ -40,10 +40,10 @@
     <div class="radio">
       <p class="text">Radio</p>
       <compRadio radioStyle="primary" radioSize="small" @radioFunc="func1" />
-      <compRadio radioStyle="primary" radioSize="normal" @radioFunc="func2" />
+      <compRadio radioStyle="primary" radioSize="medium" @radioFunc="func2" />
       <compRadio radioStyle="primary" radioSize="large" @radioFunc="func3" />
       <compRadio radioStyle="secondary" radioSize="small" @radioFunc="func1" />
-      <compRadio radioStyle="secondary" radioSize="normal" @radioFunc="func2" />
+      <compRadio radioStyle="secondary" radioSize="medium" @radioFunc="func2" />
       <compRadio radioStyle="secondary" radioSize="large" @radioFunc="func3" />
     </div>
   </div>

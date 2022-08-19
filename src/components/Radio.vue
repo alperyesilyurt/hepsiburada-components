@@ -1,11 +1,11 @@
 <template>
   <div class="radio">
-    <input
-      :class="`${radioStyle}-radio-${radioSize}`"
-      type="checkbox"
+    <div
+      class="radio-content"
+      :class="`radio-content-${radioStyle}-${radioSize}-${clicked}`"
       @click="radioFunc"
-      :value="radioValue"
-    />
+    >
+    </div>
   </div>
 </template>
 
@@ -20,194 +20,97 @@ export default {
       type: String,
       default: "normal",
     },
-    radioValue: {
-      type: String,
-      default: "normal",
+    selected: {
+      type: Boolean,
+      default: false,
     },
+    clicked: {
+      type: String,
+      default: "unclicked",
+    },
+    
   },
 
   methods: {
     radioFunc(e) {
+      if(this.selected==false){
+        this.clicked="clicked"
+        this.selected=true
+      }
+      else{
+        this.clicked="unclicked"
+        this.selected=false
+      }
       this.$emit("radioFunc", e);
+      console.log("selected:",this.selected);
+      console.log("clicked:", this.clicked);
+      console.log("key" ,e)
     },
+    
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.primary-radio-small {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  width: 16px;
-  height: 16px;
-
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
+.radio {
+  &-content {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    display: flex;
+    justify-content: center;
     
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "";
-    font-size: 12px;
-    position: absolute;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    left: 2px;
-    top: 2px;
-    background-color: #ff6000;
+    &-primary {
+      $sizes: (
+        small: 16,
+        medium: 20,
+        large: 24,
+      );
+      @each $name, $size in $sizes {
+        &-#{$name}-unclicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size +px;
+        }
+        &-#{$name}-unclicked:hover {
+          border: 2px solid #ff904c;
+        }
+        &-#{$name}-clicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size +px;
+          background-color: #ff6000;
+          border: 2px solid #ff6000;
+        }
+      }
+    }
+
+    &-secondary {
+      $sizes: (
+        small: 16,
+        medium: 20,
+        large: 24,
+      );
+      @each $name, $size in $sizes {
+        &-#{$name}-unclicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size +px;
+        }
+        &-#{$name}-unclicked:hover {
+          border: 2px solid #99aaff;
+        }
+        &-#{$name}-clicked {
+          width: $size + px;
+          height: $size + px;
+          border-radius: $size +px;
+          background-color: #6b83fa;
+          border: 2px solid #6b83fa;
+        }
+      }
+    }
   }
 }
-
-.primary-radio-normal {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
-    
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "";
-    font-size: 14px;
-    position: absolute;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    left: 3px;
-    top: 3px;
-    background-color: #ff6000;
-  }
-}
-.primary-radio-large {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #ff904c;
-  }
-  &:checked {
-    
-    border: 2px solid #ff6000;
-  }
-  &:checked:after {
-    content: "";
-
-    position: absolute;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    left: 4px;
-    top: 4px;
-    background-color: #ff6000;
-  }
-}
-
-.secondary-radio-small {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-    
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    left: 2px;
-    top: 2px;
-    background-color: #6b83fa;
-  }
-}
-.secondary-radio-normal {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-    
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "";
-
-    position: absolute;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    left: 3px;
-    top: 3px;
-    background-color: #6b83fa;
-  }
-}
-.secondary-radio-large {
-  -webkit-appearance: none;
-  background-color: #ffffff;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    border: 2px solid #99aaff;
-  }
-  &:checked {
-
-    border: 2px solid #6b83fa;
-  }
-  &:checked:after {
-    content: "";
-
-    position: absolute;
-border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    left: 4px;
-    top: 4px;
-    background-color: #6b83fa;
-  }
+.icon{
+  padding: 30px;
 }
 </style>
