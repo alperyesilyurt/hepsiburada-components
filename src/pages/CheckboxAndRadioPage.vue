@@ -1,11 +1,14 @@
 <template>
   <div class="check-radio">
+    <p class="text">{{values}} </p>
     <div class="checkbox">
       <p class="text">Checkbox</p>
       <compCheckbox
         checkboxStyle="primary"
         checkboxSize="small"
         @checkFunc="func1"
+        :checkboxStatus="values"
+        
         
       />
       <compCheckbox
@@ -52,11 +55,25 @@
 <script>
 import compCheckbox from "../components/Checkbox.vue";
 import compRadio from "../components/Radio.vue";
+import axios from "axios"
 
 export default {
   components: {
     compCheckbox,
     compRadio,
+  },
+
+  data(){
+    return{
+      values: null,
+    }
+  },
+
+  mounted(){
+    axios.get('http://localhost:6002/jsonRead').then(res=>{
+        this.values = res.data;
+        console.log("API",this.values)
+      })
   },
   methods: {
     func1() {

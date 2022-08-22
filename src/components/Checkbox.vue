@@ -1,5 +1,6 @@
 <template>
-  <div class="checkbox">
+
+  <div  class="checkbox">
     <div
       class="checkbox-content"
       :class="`checkbox-content-${checkboxStyle}-${checkboxSize}-${clicked}`"
@@ -8,6 +9,7 @@
     <img class="icon" src="../assets/checkbox-icon.svg">
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -29,6 +31,10 @@ export default {
       type: String,
       default: "unclicked",
     },
+    checkboxStatus:{
+      type: Array,
+
+    }
     
   },
 
